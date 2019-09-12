@@ -2609,6 +2609,7 @@ FIND_SOURCE_FILES = ( \
 		-o \( -name 'trash*' -type d -prune \) \
 		-o \( -name '*.[hcS]' -type f -print \) \
 		-o \( -name '*.sh' -type f -print \) \
+		| sed -e 's|^\./||' \
 	)
 
 $(ETAGS_TARGET): FORCE
