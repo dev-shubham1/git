@@ -598,6 +598,7 @@ SCRIPT_SH =
 SCRIPT_LIB =
 TEST_BUILTINS_OBJS =
 TEST_PROGRAMS_NEED_X =
+THIRD_PARTY_SOURCES =
 
 # Having this variable in your environment would break pipelines because
 # you cause "cd" to echo its destination to stdout.  It can also take
@@ -1144,6 +1145,15 @@ BUILTIN_OBJS += builtin/verify-pack.o
 BUILTIN_OBJS += builtin/verify-tag.o
 BUILTIN_OBJS += builtin/worktree.o
 BUILTIN_OBJS += builtin/write-tree.o
+
+THIRD_PARTY_SOURCES += compat/inet_ntop.c
+THIRD_PARTY_SOURCES += compat/inet_pton.c
+THIRD_PARTY_SOURCES += compat/obstack.%
+THIRD_PARTY_SOURCES += compat/nedmalloc/%
+THIRD_PARTY_SOURCES += compat/poll/%
+THIRD_PARTY_SOURCES += compat/regex/%
+THIRD_PARTY_SOURCES += sha1collisiondetection/%
+THIRD_PARTY_SOURCES += sha1dc/%
 
 GITLIBS = common-main.o $(LIB_FILE) $(XDIFF_LIB)
 EXTLIBS =
